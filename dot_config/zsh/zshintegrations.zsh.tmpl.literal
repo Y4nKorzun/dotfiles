@@ -1,0 +1,32 @@
+
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
+
+if command -v fzf &>/dev/null; then
+  # Use --zsh flag for fzf >= 0.48.0, fallback to legacy method for older versions
+  if fzf --zsh &>/dev/null; then
+    source <(fzf --zsh)
+  else
+    # Legacy fzf initialization for older versions
+    [[ -f /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
+    [[ -f /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
+    [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+  fi
+  export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix"
+  export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+  export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix"
+fi
+
+{{- if eq .chezmoi.os "linux" }}
+{{-   if or (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "debian") (and .chezmoi.osRelease.idLike (regexMatch "debian" .chezmoi.osRelease.idLike)) }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{-   end }}
+{{- end }}
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)"
+  for key in ~/.ssh/id_*; do
+    [[ -f "$key" && "$key" != *.pub ]] && ssh-add "$key" 2>/dev/null
+  done
+fi
+
+eval "$(starship init zsh)"

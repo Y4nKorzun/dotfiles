@@ -1,0 +1,12 @@
+export ZSHDIR="${ZSHDIR:-$HOME/.config/zsh}"
+
+source "$ZSHDIR/zshfunctions.zsh"
+
+zsh_add_file "$ZSHDIR/env.zsh"
+zsh_add_file "$ZSHDIR/zshconfig.zsh"
+zsh_add_file "$ZSHDIR/aliases.zsh"
+zsh_add_file "$ZSHDIR/zshintegrations.zsh"
+zsh_add_file "$ZSHDIR/zshautosuggestions.zsh"
+zsh_add_file "$ZSHDIR/zshbinds.zsh"
+zsh_add_file "$ZSHDIR/prompt.zsh"
+zsh_add_file "$ZSHDIR/autostart.zsh"
