@@ -1,0 +1,12 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_url="https://github.com/Y4nKorzun/ascii-grub-theme.git"
+version="v0.2.0"
+workdir="$(mktemp -d)"
+trap 'rm -rf "$workdir"' EXIT
+
+git clone --depth 1 --branch "$version" "$repo_url" "$workdir/ascii-grub-theme"
+"$workdir/ascii-grub-theme/install.sh" --yes
+{{- end }}
