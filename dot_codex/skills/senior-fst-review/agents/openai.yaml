@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior FST Review"
+  short_description: "Senior FST architecture reviews"
+  default_prompt: "Use $senior-fst-review to review this code or plan for FST/FSD architecture issues."

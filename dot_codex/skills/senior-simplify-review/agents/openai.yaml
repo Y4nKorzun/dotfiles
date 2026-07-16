@@ -1,0 +1,4 @@
+interface:
+  display_name: "Senior Simplify Review"
+  short_description: "Review complexity with a senior lens"
+  default_prompt: "Use $senior-simplify-review to check this implementation for simplifications a senior developer would expect."

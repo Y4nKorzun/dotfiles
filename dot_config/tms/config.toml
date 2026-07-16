@@ -1,0 +1,21 @@
+excluded_dirs = [
+    "node_modules",
+    "target",
+    "dist",
+    "build",
+    ".cache",
+    ".venv",
+    "venv",
+]
+
+[[search_dirs]]
+path = "/home/aspera/Projects/Lambo"
+depth = 5
+
+[[search_dirs]]
+path = "/home/aspera/Projects"
+depth = 5
+
+[[search_dirs]]
+path = "/home/aspera/Temp"
+depth = 5

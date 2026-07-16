@@ -1,0 +1,83 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "xhigh"
+personality = "friendly"
+service_tier = "default"
+approvals_reviewer = "guardian_subagent"
+[projects."/home/aspera"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/Lambo/lambo-web"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/ascii-grub-theme"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/plasma-widgets"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/TelegramThreadsViewer"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/mcp-ripgrep"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/Twikki/twikki-web"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/Interview"]
+trust_level = "trusted"
+
+[projects."/home/aspera/Projects/Twikki"]
+trust_level = "trusted"
+
+[tui]
+theme = "catppuccin-frappe"
+status_line = ["model-with-reasoning", "current-dir", "git-branch", "five-hour-limit", "weekly-limit", "context-remaining"]
+status_line_use_colors = true
+pet = "codex"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[features]
+terminal_resize_reflow = true
+external_migration = true
+prevent_idle_sleep = true
+memories = true
+realtime_conversation = true
+
+[hooks.state]
+
+[hooks.state."/home/aspera/Projects/Lambo/lambo-web/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:7bf50ec8782cd397e6bd05d935d26668e648d65f786dcc6d144b9f6c277c67e2"
+enabled = false
+
+[hooks.state."/home/aspera/Projects/Lambo/lambo-web/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:3c69c9b0ec85572619bfae1be2a2ebaf1d6b485a22f524a7797fa92e8bcc6a24"
+enabled = false
+
+[hooks.state."/home/aspera/Projects/Lambo/lambo-web/.codex/hooks.json:post_tool_use:0:0"]
+trusted_hash = "sha256:3ccedf7e6df6fe3233604571863cd6727f2b88d6110851c7d8dde527db09a3ac"
+enabled = false
+
+[plugins."build-web-apps@openai-curated"]
+enabled = true
+
+[plugins."figma@openai-curated"]
+enabled = true
+
+[memories]
+generate_memories = true
+use_memories = true
+disable_on_external_context = true
+
+[mcp_servers.ripgrep]
+command = "node"
+args = ["/home/aspera/Projects/mcp-ripgrep/dist/index.js"]
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"

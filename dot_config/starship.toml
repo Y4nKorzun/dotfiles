@@ -1,0 +1,48 @@
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$rust\
+$golang\
+$python\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = "catppuccin_mocha"
+
+[character]
+success_symbol = "[❯](bold mauve)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[directory]
+style = "bold sapphire"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+format = " [$symbol$branch]($style)"
+style = "bold lavender"
+symbol = " "
+
+[git_status]
+format = " [$all_status$ahead_behind]($style)"
+style = "peach"
+
+[cmd_duration]
+format = " [$duration]($style)"
+min_time = 1000
+style = "yellow"
+
+[palettes.catppuccin_mocha]
+green = "#a6e3a1"
+lavender = "#b4befe"
+mauve = "#cba6f7"
+peach = "#fab387"
+red = "#f38ba8"
+sapphire = "#74c7ec"
+yellow = "#f9e2af"
