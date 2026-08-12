@@ -9,5 +9,5 @@ excluded_dirs = [
 ]
 
 [[search_dirs]]
-path = "/Users/yankorzun/Projects"
+path = "~/Projects"
 depth = 5
