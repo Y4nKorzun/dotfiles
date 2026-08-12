@@ -1,0 +1,36 @@
+{
+  "compaction": {
+    "enabled": false
+  },
+  "images": {
+    "autoResize": true,
+    "blockImages": false
+  },
+  "enableSkillCommands": true,
+  "showHardwareCursor": true,
+  "editorPaddingX": 2,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "hideThinkingBlock": false,
+  "markdown": {
+    "mermaid": "final"
+  },
+  "quietStartup": true,
+  "defaultProjectTrust": "ask",
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "defaultThinkingLevel": "medium",
+  "tuiMode": "fullscreen",
+  "fullscreenScrollbar": "always",
+  "theme": "dark",
+  "packages": [
+    "npm:pi-zentui",
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access"
+  ],
+  "lastChangelogVersion": "0.84.1",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.3-codex-spark"
+}

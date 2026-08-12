@@ -1,0 +1,7 @@
+# Pi: credentials and machine-local state must never reach the dotfiles repo.
+.config/pi/auth.json
+.config/pi/models-store.json
+.config/pi/sessions
+.config/pi/sessions/**
+.config/pi/npm
+.config/pi/npm/**
