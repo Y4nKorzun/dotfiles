@@ -1,0 +1,32 @@
+#!/usr/bin/env zsh
+
+window_id=${TMUX_PICKER_WINDOW-}
+[[ $window_id == @<-> ]] || exit 1
+tab=$'\t'
+
+short_path() {
+  local path=$1 parent leaf
+  [[ $path == $HOME ]] && path='~'
+  [[ $path == $HOME/* ]] && path="~/${path#$HOME/}"
+  [[ ${#path} -le 56 ]] && { print -r -- "$path"; return; }
+
+  leaf=${path##*/}
+  parent=${path%/*}
+  parent=${parent##*/}
+  print -r -- "…/$parent/$leaf"
+}
+
+selected=$(
+  tmux list-panes -t "$window_id" -F "#{pane_id}${tab}#{pane_active}${tab}#{pane_index}${tab}#{pane_current_command}${tab}#{pane_current_path}" |
+    while IFS=$tab read -r pane_id active index command path; do
+      marker=' '
+      [[ $active == 1 ]] && marker='●'
+      printf '%s\t%s  #%s  %-18s  %s\n' "$pane_id" "$marker" "$index" "$command" "$(short_path "$path")"
+    done |
+    fzf --delimiter="$tab" --with-nth=2.. --no-multi --layout=reverse --border=rounded \
+      --bind='h:up,j:down,k:up,l:down' --prompt='Pane › ' \
+      --header='h/j/k/l or ↑/↓ navigate   Enter focus   Esc cancel'
+) || exit 0
+
+pane_id=${selected%%$'\t'*}
+[[ -n $pane_id ]] && tmux select-pane -t "$pane_id"

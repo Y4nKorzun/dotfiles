@@ -9,13 +9,5 @@ excluded_dirs = [
 ]
 
 [[search_dirs]]
-path = "/home/aspera/Projects/Lambo"
-depth = 5
-
-[[search_dirs]]
-path = "/home/aspera/Projects"
-depth = 5
-
-[[search_dirs]]
-path = "/home/aspera/Temp"
+path = "/Users/yankorzun/Projects"
 depth = 5

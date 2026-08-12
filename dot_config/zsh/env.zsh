@@ -1,5 +1,12 @@
-zsh_prepend_path "$HOME/.local/bin"
-zsh_append_path "$HOME/.lmstudio/bin"
+typeset -U path PATH
+[[ -d "$HOME/.local/bin" ]] && path=("$HOME/.local/bin" $path)
+[[ -d /opt/homebrew/opt/node@24/bin ]] && path=(/opt/homebrew/opt/node@24/bin $path)
+[[ -d "$HOME/.lmstudio/bin" ]] && path+=("$HOME/.lmstudio/bin")
 
-zsh_add_file "$HOME/.local/bin/env"
-zsh_add_file "$HOME/.cargo/env"
+export EDITOR=nvim
+export VISUAL=nvim
+export LESS='-R'
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+
+[[ -r "$HOME/.local/bin/env" ]] && source "$HOME/.local/bin/env"
+[[ -r "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
