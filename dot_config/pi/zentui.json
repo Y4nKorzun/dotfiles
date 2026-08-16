@@ -97,9 +97,12 @@
             "ignoreSubmodules": false
           },
           "extensionStatuses": {
-            "defaultPlacement": "right",
-            "placements": {},
-            "colorModes": {}
+            "placements": {
+              "mode-cycler": "left"
+            },
+            "colorModes": {
+              "mode-cycler": "original"
+            }
           }
         }
       }

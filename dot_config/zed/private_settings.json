@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "favorite_models": [],
+    "model_parameters": [],
+    "enable_feedback": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "base_keymap": "Cursor",
   "context_servers": {
     "mcp-server-github": {
       "enabled": true,
@@ -22,6 +31,9 @@
     "metrics": false
   },
   "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
     "codex-acp": {
       "type": "registry"
     },

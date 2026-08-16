@@ -8,7 +8,7 @@
   },
   "enableSkillCommands": true,
   "showHardwareCursor": true,
-  "editorPaddingX": 2,
+  "editorPaddingX": 1,
   "terminal": {
     "showTerminalProgress": true
   },
@@ -21,16 +21,23 @@
   "warnings": {
     "anthropicExtraUsage": false
   },
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "xhigh",
   "tuiMode": "fullscreen",
   "fullscreenScrollbar": "always",
-  "theme": "dark",
+  "theme": "slop",
   "packages": [
     "npm:pi-zentui",
     "npm:pi-mcp-adapter",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "npm:@koltmcbride/pi-loop",
+    "npm:@narumitw/pi-goal"
   ],
   "lastChangelogVersion": "0.84.1",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.3-codex-spark"
+  "defaultModel": "gpt-5.6-sol",
+  "outputPad": 1,
+  "npmCommand": [
+    "npm",
+    "--ignore-scripts"
+  ]
 }
